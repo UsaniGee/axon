@@ -1,0 +1,13 @@
+{
+  "name": "axon",
+  "owner": {
+    "name": "Atop Web Technologies"
+  },
+  "plugins": [
+    {
+      "name": "axon",
+      "source": "./",
+      "description": "AXON is a set of modular AI agent skills for spec-driven development."
+    }
+  ]
+}

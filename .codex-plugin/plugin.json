@@ -1,0 +1,38 @@
+{
+  "name": "axon",
+  "version": "0.1.0",
+  "description": "Spec-driven development skills for high-performance software teams.",
+  "author": {
+    "name": "Atop Web Technologies",
+    "url": "https://github.com/atopwebtechnologies"
+  },
+  "homepage": "https://github.com/atopwebtechnologies/axon",
+  "repository": "https://github.com/atopwebtechnologies/axon",
+  "license": "Apache-2.0",
+  "keywords": [
+    "spec-driven-development",
+    "ai-agents",
+    "workflow",
+    "developer-tools",
+    "atop"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "AXON",
+    "shortDescription": "Spec-driven development for high-performance software teams.",
+    "longDescription": "AXON gives coding agents a structured lifecycle for initializing project context, crafting specs, immersing in implementation, investigating progress, inspecting work, and recovering safely.",
+    "developerName": "Atop Web Technologies",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/atopwebtechnologies/axon",
+    "brandColor": "#2563EB",
+    "defaultPrompt": [
+      "Initialize AXON for this project.",
+      "Craft a pathway for this feature.",
+      "Investigate AXON progress."
+    ]
+  }
+}
