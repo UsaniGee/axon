@@ -110,14 +110,15 @@ ln -sfn /absolute/path/to/axon .agents/plugins/axon
 
 ## Tutorial: Greenfield Build
 
-This example creates a small web application from scratch: a picker wheel that
-spins and selects a random option.
+This example creates a small web application from scratch: a client launch
+board that helps a team track milestones, tasks, owners, due dates, and launch
+readiness.
 
 ### 1. Create the Project
 
 ```bash
-mkdir picker-wheel
-cd picker-wheel
+mkdir client-launch-board
+cd client-launch-board
 ```
 
 Start your coding agent or IDE from this directory. If asked whether you trust
@@ -132,16 +133,17 @@ the folder, choose to trust it.
 Follow the prompts. A simple set of answers might be:
 
 ```text
-Product goal: A web app with a configurable spinning wheel.
-Audience: General public.
-Interaction: Click or tap to spin.
-Customization: Basic editable options.
-Platform: Desktop-first, responsive enough for mobile.
+Product goal: A web app for tracking client launch work.
+Audience: small software teams and project leads.
+Core objects: Projects, milestones, tasks, owners, due dates, and status.
+Primary workflow: Create a launch project, add milestones, move tasks through statuses.
+Reporting: Show launch readiness, overdue tasks, and blockers.
+Platform: Desktop-first dashboard, responsive enough for tablets.
 Product guidelines: Autogenerate.
 Language: TypeScript.
-Frontend: Vue.
+Frontend: React or Vue.
 Backend: None for the first version.
-Database: None.
+Database: Browser storage or seeded mock data.
 Workflow: Standard.
 ```
 
@@ -150,7 +152,7 @@ AXON creates the project context in `axon/`.
 ### 3. Craft the First Pathway
 
 ```text
-/axon:axon-craft "Build the initial picker wheel application."
+/axon:axon-craft "Build the initial client launch board."
 ```
 
 AXON will create:
@@ -173,8 +175,9 @@ the application you want.
 
 AXON works through the plan, updates task status, runs the project checks, and
 asks for manual verification when needed. For a frontend app, that may include
-starting the dev server, opening the local URL, spinning the wheel, editing the
-options, and confirming the winner display.
+starting the dev server, opening the local URL, creating a launch project,
+adding milestones, moving tasks between statuses, and confirming the readiness
+summary updates.
 
 ### 5. Investigate or Inspect
 
@@ -192,8 +195,8 @@ Inspect completed work:
 
 ## Tutorial: Brownfield Iteration
 
-This example improves an existing picker wheel so signed-in users can save and
-restore their wheel configurations.
+This example improves an existing client launch board so teams can collaborate
+across accounts instead of relying only on local browser state.
 
 Start from an existing app, then open a new coding-agent session from the app
 root.
@@ -209,20 +212,21 @@ If the project has never used AXON:
 For a brownfield project, AXON analyzes the existing codebase before drafting
 product, stack, and workflow context.
 
-### 2. Craft a Personalization Pathway
+### 2. Craft a Collaboration Pathway
 
 ```text
-/axon:axon-craft "Allow users to log in and save their picker wheel configurations."
+/axon:axon-craft "Add team accounts, shared projects, and task comments to the launch board."
 ```
 
 Example pathway decisions:
 
 ```text
-Authentication: Firebase Auth.
-Saved data: Wheel options and visual settings.
-Storage: Firestore.
-Login UI: Modal overlay.
-Restore behavior: Load the user's most recent saved wheel.
+Authentication: Email/password or magic-link sign-in.
+Teams: Users can belong to one workspace.
+Shared data: Projects, milestones, tasks, owners, comments, and blockers.
+Storage: Supabase, Firebase, or the project's existing backend.
+Access rules: Workspace members can read and update shared launch projects.
+UI changes: Account menu, member filter, task comments, and activity timestamps.
 ```
 
 AXON writes a new pathway under `axon/pathways/<pathway_id>/`.
@@ -237,8 +241,8 @@ axon/pathways/<pathway_id>/spec.md
 axon/pathways/<pathway_id>/plan.md
 ```
 
-The plan should describe the data model, auth flow, UI changes, tests, and
-manual verification steps.
+The plan should describe the data model, auth flow, access rules, UI changes,
+tests, and manual verification steps.
 
 ### 4. Immerse
 
@@ -255,9 +259,11 @@ Reload the application and confirm:
 
 ```text
 Users can sign in.
-Users can save a wheel configuration.
-Users can reload and restore saved options.
-Signed-out users still get a usable picker wheel.
+Users can create or join a workspace.
+Users can create a shared launch project.
+Users can assign tasks and leave comments.
+Launch readiness updates when task statuses change.
+Users outside the workspace cannot access private launch projects.
 ```
 
 Tip: if your dev server or test runner enters watch mode, update
