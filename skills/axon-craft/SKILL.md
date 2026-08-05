@@ -28,7 +28,7 @@ Before starting the planning process, you MUST locate and read the project's fou
 1.  **Locate Index:** Check for the existence of `axon/index.md` in the project root.
     -   **If Missing:**
         -   Announce: *"AXON is not initialized properly. I cannot find the `axon/index.md` file."*
-        -   Ask the user using a **Yes/No question** if they would like to run the setup process now to initialize AXON or repair the environment.
+        -   Ask the user using a **Yes/No question** if they would like to run initialization now to initialize AXON or repair the environment.
         -   **If Approved:** Internally invoke the `axon-initialize` skill to begin initialization.
         -   **If Denied:** HALT and await further instructions.
 
@@ -36,7 +36,7 @@ Before starting the planning process, you MUST locate and read the project's fou
     -   **Product Definition** (`product.md`)
     -   **Tech Stack** (`tech-stack.md`)
     -   **Workflow** (`workflow.md`)
-    -   **Health Check:** You MUST verify that every linked file actually exists. If ANY of these core files are missing, HALT immediately. Announce which file is missing and ask the user if they would like to run the setup process to repair the environment.
+    -   **Health Check:** You MUST verify that every linked file actually exists. If ANY of these core files are missing, HALT immediately. Announce which file is missing and ask the user if they would like to run initialization to repair the environment.
 
 ---
 

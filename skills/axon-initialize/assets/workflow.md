@@ -2,7 +2,7 @@
 
 ## Guiding Principles
 
-1.  **The Plan is the Source of Truth:** All work must be pathwayed in `plan.md`
+1.  **The Plan is the Source of Truth:** All work must be recorded in `plan.md`
 2.  **The Tech Stack is Deliberate:** Changes to the tech stack must be
     documented in `tech-stack.md` *before* implementation
 3.  **Test-Driven Development:** Write unit tests before implementing
@@ -101,7 +101,7 @@ When an implemented task or phase requires corrections, amendments, or additions
     during or after a code review, instruct the agent to review your changes
     (e.g., *"run a review"* or triggering the action manually in compatible
     clients). The review agent will automatically append a `Review Fixes` phase
-    to `plan.md` so that correction tasks are formally pathwayed and
+    to `plan.md` so that correction tasks are formally recorded and
     checkpointed.
 3.  **Logical State Reversions (`axon-revert`):** If a task implementation
     is fundamentally flawed or needs to be redone, instruct the agent to revert

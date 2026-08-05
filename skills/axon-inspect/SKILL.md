@@ -32,7 +32,7 @@ Before starting the review process, you MUST locate and read the project's found
 1.  **Locate Index:** Check for the existence of `axon/index.md` in the project root.
     -   **If Missing:**
         -   Announce: *"AXON is not initialized properly. I cannot find the `axon/index.md` file."*
-        -   Ask the user using a **Yes/No question** if they would like to run the setup process now to initialize AXON.
+        -   Ask the user using a **Yes/No question** if they would like to run initialization now to initialize AXON.
         -   **If Approved:** Internally invoke the `axon-initialize` skill.
         -   **If Denied:** HALT and await further instructions.
 
@@ -42,7 +42,7 @@ Before starting the review process, you MUST locate and read the project's found
     -   **Tech Stack** (`tech-stack.md`)
     -   **Workflow** (`workflow.md`)
     -   **Product Guidelines** (`product-guidelines.md`)
-    -   **Health Check:** You MUST verify that every linked file actually exists. If ANY of these core files are missing, HALT immediately. Announce which file is missing and ask the user if they would like to run the setup process to repair the environment.
+    -   **Health Check:** You MUST verify that every linked file actually exists. If ANY of these core files are missing, HALT immediately. Announce which file is missing and ask the user if they would like to run initialization to repair the environment.
 
 ---
 
@@ -185,7 +185,7 @@ Before starting the review process, you MUST locate and read the project's found
                  - **Commit Plan Update:**
                    - Stage `plan.md`.
                    - Commit with message: `axon(plan): Mark task 'Apply review suggestions' as complete`.
-                 - **Announce Success:** "Review changes committed and pathwayed in the plan."
+                - **Announce Success:** "Inspection changes committed and recorded in the plan."
             iii. **If No:** Skip the commit and plan update. Proceed to '3.3 Pathway Cleanup'.
 
 ### 3.3 Pathway Cleanup

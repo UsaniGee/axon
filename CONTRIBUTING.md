@@ -1,33 +1,46 @@
-# How to contribute
+# Contributing to AXON
 
-We'd love to accept your patches and contributions to this project.
+Thanks for helping improve AXON.
 
-## Before you begin
+AXON is an open-source Atop Web Technologies project for spec-driven AI-agent
+workflows. Contributions should keep the plugin installable, readable, and
+useful across coding agents and IDE environments.
 
-### Sign our Contributor License Agreement
+## Development Principles
 
-Contributions to this project must be accompanied by a
-[Contributor License Agreement](https://cla.developers.google.com/about) (CLA).
-You (or your employer) retain the copyright to your contribution; this simply
-gives us permission to use and redistribute your contributions as part of the
-project.
+- Keep protocols explicit and testable.
+- Preserve compatibility with slash-command based agent plugins.
+- Prefer clear engineering language over heavy metaphor.
+- Keep AXON artifacts under `axon/` in target projects.
+- Preserve Apache-2.0 license and upstream attribution.
 
-If you or your current employer have already signed the Google CLA (even if it
-was for a different project), you probably don't need to do it again.
+## Contribution Flow
 
-Visit <https://cla.developers.google.com/> to see your current agreements or to
-sign a new one.
+1. Fork the repository.
+2. Create a focused branch.
+3. Make a small, reviewable change.
+4. Validate plugin metadata and edited skills.
+5. Open a pull request with a concise summary and test notes.
 
-### Review our community guidelines
+## Validation
 
-This project follows
-[Google's Open Source Community Guidelines](https://opensource.google/conduct/).
+Before opening a pull request, validate JSON manifests and any edited skills.
 
-## Contribution process
+```bash
+python3 -m json.tool plugin.json >/dev/null
+python3 -m json.tool .claude-plugin/marketplace.json >/dev/null
+python3 -m json.tool .codex-plugin/plugin.json >/dev/null
+```
 
-### Code reviews
+If you have access to Codex skill validation scripts, also run the plugin and
+skill validators before submitting.
 
-All submissions, including submissions by project members, require review. We
-use GitHub pull requests for this purpose. Consult
-[GitHub Help](https://help.github.com/articles/about-pull-requests/) for more
-information on using pull requests.
+## Reviews
+
+All contributions should be reviewed before merging. Reviews prioritize:
+
+- broken command wiring
+- stale branding
+- unsafe git/revert behavior
+- unclear user interaction flows
+- missing validation notes
