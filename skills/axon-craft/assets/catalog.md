@@ -146,3 +146,27 @@ on Google Cloud.
     -   **Dependencies**: `terraform`
     -   **Keywords**: `Terraform`, `GCP`, `GCS Backend`, `Infrastructure as
         Code`, `IaC`
+
+## Frontend Skills
+
+Skills focused on delivering premium, production-ready frontend interfaces
+following AXON's composition-first design philosophy, maintained by Atop Web
+Technologies.
+
+### axon-compose
+
+-   **Description**: Steers the agent toward award-level frontend work using
+    composition-first principles, a defined design system, intentional motion,
+    and strong imagery. Enforces restrained composition, image-led hierarchy,
+    cohesive content structure, and tasteful motion while avoiding generic cards,
+    weak branding, and UI clutter. Also activates automatically inside
+    `axon-immerse` when frontend work is detected in the pathway.
+-   **URL**:
+    https://raw.githubusercontent.com/atopwebtechnologies/axon/main/skills/axon-compose/
+-   **Party**: 1p
+-   **Detection Signals**:
+    -   **Dependencies**: `react`, `next`, `vite`, `vue`, `nuxt`, `svelte`,
+        `astro`, `tailwindcss`, `framer-motion`
+    -   **Keywords**: `landing page`, `UI design`, `frontend`, `hero`,
+        `design system`, `motion`, `animation`, `dashboard`, `interface`,
+        `composition`, `prototype`, `game UI`

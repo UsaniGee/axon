@@ -79,6 +79,24 @@ Adhere to this sequence to execute the selected pathway.
     -   Check for installed skills in `.agents/skills/` and `~/.agents/extensions/axon/skills/`.
     -   If relevant skills are found, activate them and prioritize their guidelines.
 
+    **Frontend Detection Protocol:**
+    -   After reading `axon/tech-stack.md`, check for frontend framework signals in the tech stack, spec, or plan. Signals include: `react`, `next`, `vue`, `nuxt`, `svelte`, `vite`, `astro`, any mention of `landing page`, `UI`, `dashboard`, `hero`, `design system`, `interface`, `frontend`, `animation`, or `motion`.
+    -   **If frontend signals are found:**
+        -   **If `axon-compose` is installed** (found in `.agents/skills/axon-compose/` or `~/.agents/extensions/axon/skills/axon-compose/`):
+            -   Announce: *"Frontend work detected. Activating axon-compose design guidelines for this pathway."*
+            -   For every task in the implementation plan that involves a UI or frontend component, you MUST apply the `axon-compose` hard rules (composition, hero rules, cards, imagery, copy, motion) and run the `axon-compose` litmus check before marking that task complete.
+            -   Non-frontend tasks in the same pathway follow the standard `axon-immerse` behaviour.
+        -   **If `axon-compose` is NOT installed:**
+            -   Announce: *"Frontend work detected. The `axon-compose` skill is available and will significantly improve the quality, composition, and visual polish of this frontend."*
+            -   Ask the user using a **Yes/No question** if they would like to install `axon-compose` before proceeding.
+            -   **If yes:** Install the skill using the standard installation sequence:
+                ```bash
+                mkdir -p .agents/skills/axon-compose
+                curl -sSL https://raw.githubusercontent.com/atopwebtechnologies/axon/main/skills/axon-compose/SKILL.md -o .agents/skills/axon-compose/SKILL.md
+                ```
+                Verify the file exists. Inform the user to refresh their agent environment if required, and wait for confirmation before resuming.
+            -   **If no:** Proceed with the standard workflow. Note that frontend quality standards from `axon/product-guidelines.md` still apply.
+
 4.  **Execute Tasks and Update Pathway Plan:**
     -   Loop through each task in the pathway's **Implementation Plan** one by one.
     -   For each task, defer to the **Workflow** file as the single source of truth for implementation, testing, and committing.

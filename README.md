@@ -34,8 +34,10 @@ AXON stores those decisions inside the project:
 The result is a more predictable way to plan and build software applications:
 
 ```text
-Context -> Craft -> Immerse -> Investigate -> Inspect -> Revert
+Context -> Craft -> Immerse (<-> Compose) -> Investigate -> Inspect -> Revert
 ```
+
+`axon-compose` activates inside `axon-immerse` when frontend work is detected, and is also available as a standalone command for dedicated design sessions.
 
 ## Commands
 
@@ -46,6 +48,7 @@ AXON exposes slash commands through supported coding agents and IDEs.
 | `/axon:axon-initialize` | Initialize project context and workflow standards. | `/axon:axon-initialize` |
 | `/axon:axon-craft` | Craft a new pathway from a feature, bug, chore, or MVP idea. | `/axon:axon-craft "Add team invitations with email links."` |
 | `/axon:axon-immerse` | Enter an approved pathway and implement the plan. | `/axon:axon-immerse` |
+| `/axon:axon-compose` | Design a premium frontend surface: landing page, app UI, dashboard, or game UI. | `/axon:axon-compose` |
 | `/axon:axon-investigate` | Investigate project progress across pathways. | `/axon:axon-investigate` |
 | `/axon:axon-inspect` | Inspect completed work against the spec, plan, and standards. | `/axon:axon-inspect` |
 | `/axon:axon-revert` | Revert a pathway, phase, or task using git-aware recovery. | `/axon:axon-revert pathway team-invites` |
@@ -67,6 +70,34 @@ axon/
       spec.md
       plan.md
       metadata.json
+```
+
+## Frontend Design
+
+`axon-compose` is AXON's frontend design skill. It enforces composition-first
+principles, a defined design system, intentional motion, and strong imagery
+across landing pages, app UIs, dashboards, and game interfaces.
+
+It operates in two modes:
+
+**Standalone** — invoke directly for any dedicated frontend design session:
+
+```text
+/axon:axon-compose
+```
+
+**Inline within `axon-immerse`** — when implementing a pathway that includes
+frontend work, `axon-immerse` automatically detects frontend signals in the
+tech stack, spec, and plan. If `axon-compose` is installed, its hard rules,
+design system requirements, and litmus checks activate for every UI task in
+the pathway — without interrupting the overall implementation flow.
+
+Install `axon-compose` in any project workspace:
+
+```bash
+mkdir -p .agents/skills/axon-compose
+curl -sSL https://raw.githubusercontent.com/atopwebtechnologies/axon/main/skills/axon-compose/SKILL.md \
+  -o .agents/skills/axon-compose/SKILL.md
 ```
 
 ## Installation
@@ -335,6 +366,7 @@ skills/
   axon-initialize/
   axon-craft/
   axon-immerse/
+  axon-compose/
   axon-investigate/
   axon-inspect/
   axon-revert/
